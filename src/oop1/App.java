@@ -46,5 +46,30 @@ public class App {
         }
         System.out.println("</ul>");
 
+        IndividualCustomer individualCustomer = new IndividualCustomer();
+
+        individualCustomer.setId(1);
+        individualCustomer.setCustomerNumber("12345");
+        individualCustomer.setPhone("+90 599 488 3322");
+        individualCustomer.setFirstName("Hasan Basri");
+        individualCustomer.setLastName("Ayhaner");
+
+        CorporateCustomer corporateCustomer = new CorporateCustomer();
+        corporateCustomer.setId(2);
+        corporateCustomer.setCustomerNumber("67890");
+        corporateCustomer.setPhone("+90 589 498 2233");
+        corporateCustomer.setCompanyName("HBA114");
+        corporateCustomer.setTaxNumber("0001");
+
+        Customer[] customers = {
+                individualCustomer,
+                corporateCustomer
+        };
+
+        for (Customer customer : customers) {
+            System.out.println("Customer Id : " + customer.getId());
+            System.out.println("Customer Number : " + customer.getCustomerNumber());
+            System.out.println("Customer Phone : " + customer.getPhone());
+        }
     }
 }
